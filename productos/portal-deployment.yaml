@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productos-front
+  labels:
+    app: productos-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: productos-front
+  template:
+    metadata:
+      labels:
+        app: productos-front
+    spec:
+      containers:
+      - name: productos-front
+        image: fpintopi/front-productos:latest
+        ports:
+          - containerPort: 80     

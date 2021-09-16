@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: productos-front-service
+spec:
+  selector:
+    app: productos-front
+  type: NodePort
+  ports:
+    - port: 8109 #puerto cluster
+      protocol: TCP    
+      targetPort: 80  #puerto contenedor
+      nodePort: 30022
+  
+
